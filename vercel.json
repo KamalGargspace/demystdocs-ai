@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://demystdocs-ai.onrender.com/$1"
+    }
+  ]
+}
