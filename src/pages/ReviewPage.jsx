@@ -56,7 +56,7 @@ export default function ReviewPage() {
       if (jsonUrl) {
         setChatLoading(true);
         try {
-          const res = await axios.post("/api/get_summary", null, {
+          const res = await axios.post(`${import.meta.env.VITE_API_URL}/get_summary`, null, {
             params: { file_path: jsonUrl },
           });
           setMessages([
@@ -84,7 +84,7 @@ export default function ReviewPage() {
     setMessages((prev) => [...prev, m]);
     setChatLoading(true);
     try {
-      const res = await axios.post("/api/ask", null, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/ask`, null, {
         params: { question: content, file_path: jsonUrl },
       });
       const reply = res.data.response || "Assistant could not answer this.";
